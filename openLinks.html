@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Open Multiple Links&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#link-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style-type: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#link-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #007bff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0056b3;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;🔗 Open Multiple Links in New Tabs&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Click the button below to open all the listed websites simultaneously in new tabs.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul id="link-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li data-url="https://www.google.com/"&gt;Google&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li data-url="https://www.wikipedia.org/"&gt;Wikipedia&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li data-url="https://github.com/"&gt;GitHub&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;li data-url="https://developer.mozilla.org/"&gt;MDN Web Docs&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="openAllLinks()"&gt;Open All Links&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openAllLinks() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get the list of &lt;li&gt; elements</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const links = document.querySelectorAll('#link-list li');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Flag to check if the browser is blocking pop-ups</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let popUpBlocked = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Loop through each list item</p>
+<p class="p1"><span class="Apple-converted-space">            </span>links.forEach((item) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Get the URL from the 'data-url' attribute</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const url = item.getAttribute('data-url');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (url) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// window.open() is used to open a new tab/window</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// The second argument '_blank' ensures it opens in a new tab/window</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const newWindow = window.open(url, '_blank');</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Check if the window was successfully opened (not null and not closed)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>popUpBlocked = true;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Alert the user if the browser's pop-up blocker intervened</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (popUpBlocked) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert("Your browser may have blocked some of the pop-ups. Please disable your pop-up blocker for this site.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
